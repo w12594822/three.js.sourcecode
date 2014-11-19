@@ -1062,7 +1062,7 @@ THREE.Quaternion.prototype = {
 	},
 
 	/*
-	///set x 方法用来从新设置四元数的x值.并返回新的值的四元数.
+	///set x 方法用来重新设置四元数的x值.并返回新的值的四元数.
 	///NOTE: set x()的用法是Quaternion.prototype.x,这种用法在除ie浏览器以外的浏览器上可以使用.
 	*/
 	///<summary>set x</summary>
@@ -1087,7 +1087,7 @@ THREE.Quaternion.prototype = {
 	},
 
 	/*
-	///set y 方法用来从新设置四元数的x值.并返回新的值的四元数.
+	///set y 方法用来重新设置四元数的x值.并返回新的值的四元数.
 	///NOTE: set y()的用法是Quaternion.prototype.y,这种用法在除ie浏览器以外的浏览器上可以使用.
 	*/
 	///<summary>set y</summary>
@@ -1112,7 +1112,7 @@ THREE.Quaternion.prototype = {
 	},
 
 	/*
-	///set z 方法用来从新设置四元数的x值.并返回新的值的四元数.
+	///set z 方法用来重新设置四元数的x值.并返回新的值的四元数.
 	///NOTE: set z()的用法是Quaternion.prototype.z,这种用法在除ie浏览器以外的浏览器上可以使用.
 	*/
 	///<summary>set z</summary>
@@ -1137,7 +1137,7 @@ THREE.Quaternion.prototype = {
 	},
 
 	/*
-	///set w 方法用来从新设置四元数的x坐标值.并返回新的坐标值的四元数.
+	///set w 方法用来重新设置四元数的x坐标值.并返回新的坐标值的四元数.
 	///NOTE: set w()的用法是Quaternion.prototype.w,这种用法在除ie浏览器以外的浏览器上可以使用.
 	*/
 	///<summary>set w</summary>
@@ -1157,7 +1157,7 @@ THREE.Quaternion.prototype = {
 	///TODO:这里缺少getComponent()方法.
 
 	/*
-	///set方法用来从新设置四元数的x,y,z,w值.并返回新的坐标值的四元数.
+	///set方法用来重新设置四元数的x,y,z,w值.并返回新的坐标值的四元数.
 	/// TODO:修改set方法,兼容x,y,z,w参数省略支持多态.
 	*/
 	///<summary>set</summary>
@@ -1818,7 +1818,7 @@ THREE.Vector2.prototype = {
 	constructor: THREE.Vector2,	//构造器,返回对创建此对象的Vector2函数的引用
 
 	/*
-	///set方法用来从新设置二维向量的x,y坐标值.并返回新的坐标值的二维向量.
+	///set方法用来重新设置二维向量的x,y坐标值.并返回新的坐标值的二维向量.
 	*/
 	///<summary>set</summary>
 	///<param name ="x" type="number">x坐标</param>
@@ -1834,7 +1834,7 @@ THREE.Vector2.prototype = {
 	},
 
 	/*
-	///setX方法用来从新设置二维向量的x坐标值.并返回新的坐标值的二维向量.
+	///setX方法用来重新设置二维向量的x坐标值.并返回新的坐标值的二维向量.
 	*/
 	///<summary>setX</summary>
 	///<param name ="x" type="number">x坐标</param>
@@ -1848,7 +1848,7 @@ THREE.Vector2.prototype = {
 	},
 
 	/*
-	///setY方法用来从新设置二维向量的x坐标值.并返回新的坐标值的二维向量.
+	///setY方法用来重新设置二维向量的x坐标值.并返回新的坐标值的二维向量.
 	*/
 	///<summary>setY</summary>
 	///<param name ="y" type="number">y坐标</param>
@@ -1862,7 +1862,7 @@ THREE.Vector2.prototype = {
 	},
 
 	/*
-	///setComponent方法用来从新设置二维向量的(x,y)坐标值.并返回新的坐标值的二维向量.
+	///setComponent方法用来重新设置二维向量的(x,y)坐标值.并返回新的坐标值的二维向量.
 	///参数index取值为0 或者 1,取值为0,参数value设置x的坐标值,取值为1,参数value设置y的坐标.
 	*/
 	///<summary>setComponent</summary>
@@ -2268,7 +2268,7 @@ THREE.Vector2.prototype = {
 	/*
 	///negate方法将当前二维向量的(x,y)坐标值若为负数时,返回正数.
 	///	而当前二维向量的(x,y)坐标值若为正数时,返回负数.
-	/// NOTE:取当前二维向量的(x,y)坐标值相反数
+	/// NOTE:取当前二维向量的(x,y)坐标值相反数,经常用来翻转法线
 	*/
 	///<summary>negate</summary>
 	///<returns type="Vector2">返回取相反数后的二维向量</returns>
@@ -2487,7 +2487,7 @@ THREE.Vector3.prototype = {
 	constructor: THREE.Vector3,	//构造器,返回对创建此对象的Vector3函数的引用
 
 	/*
-	///set方法用来从新设置三维向量的x,y,z坐标值.并返回新的坐标值的三维向量.
+	///set方法用来重新设置三维向量的x,y,z坐标值.并返回新的坐标值的三维向量.
 	*/
 	///<summary>set</summary>
 	///<param name ="x" type="number">x坐标</param>
@@ -2505,7 +2505,7 @@ THREE.Vector3.prototype = {
 	},
 
 	/*
-	///setX方法用来从新设置三维向量的x坐标值.并返回新的坐标值的三维向量.
+	///setX方法用来重新设置三维向量的x坐标值.并返回新的坐标值的三维向量.
 	*/
 	///<summary>setX</summary>
 	///<param name ="x" type="number">x坐标</param>
@@ -2519,7 +2519,7 @@ THREE.Vector3.prototype = {
 	},
 
 	/*
-	///setY方法用来从新设置三维向量的y坐标值.并返回新的坐标值的三维向量.
+	///setY方法用来重新设置三维向量的y坐标值.并返回新的坐标值的三维向量.
 	*/
 	///<summary>setY</summary>
 	///<param name ="y" type="number">y坐标</param>
@@ -2533,7 +2533,7 @@ THREE.Vector3.prototype = {
 	},
 
 	/*
-	///setZ方法用来从新设置三维向量的z坐标值.并返回新的坐标值的三维向量.
+	///setZ方法用来重新设置三维向量的z坐标值.并返回新的坐标值的三维向量.
 	*/
 	///<summary>setZ</summary>
 	///<param name ="z" type="number">z坐标</param>
@@ -2547,7 +2547,7 @@ THREE.Vector3.prototype = {
 	},
 
 	/*
-	///setComponent方法用来从新设置三维向量的(x,y)坐标值.并返回新的坐标值的三维向量.
+	///setComponent方法用来重新设置三维向量的(x,y)坐标值.并返回新的坐标值的三维向量.
 	///参数index取值为0,1 或者 2,取值为0,参数value设置x的坐标值,取值为1,参数value设置y的坐标,
 	///取值为2,参数value设置z的坐标.
 	*/
@@ -3199,7 +3199,7 @@ THREE.Vector3.prototype = {
 	/*
 	///negate方法将当前三维向量的(x,y,z)坐标值若为负数时,返回正数.
 	///	而当前三维向量的(x,y,z)坐标值若为正数时,返回负数.
-	/// NOTE:取当前三维向量的(x,y,z)坐标值相反数
+	/// NOTE:取当前三维向量的(x,y,z)坐标值相反数,经常用来翻转法线
 	*/
 	///<summary>negate</summary>
 	///<returns type="Vector3">返回取相反数后的三维向量</returns>
@@ -3715,7 +3715,7 @@ THREE.Vector4.prototype = {
 	constructor: THREE.Vector4,	//构造器,返回对创建此对象的Vector4函数的引用
 
 	/*
-	///set方法用来从新设置四维向量的x,y,z,w坐标值.并返回新的坐标值的四维向量.
+	///set方法用来重新设置四维向量的x,y,z,w坐标值.并返回新的坐标值的四维向量.
 	*/
 	///<summary>set</summary>
 	///<param name ="x" type="number">x坐标</param>
@@ -3735,7 +3735,7 @@ THREE.Vector4.prototype = {
 	},
 
 	/*
-	///setX方法用来从新设置四维向量的x坐标值.并返回新的坐标值的四维向量.
+	///setX方法用来重新设置四维向量的x坐标值.并返回新的坐标值的四维向量.
 	*/
 	///<summary>setX</summary>
 	///<param name ="x" type="number">x坐标</param>
@@ -3749,7 +3749,7 @@ THREE.Vector4.prototype = {
 	},
 
 	/*
-	///setY方法用来从新设置四维向量的y坐标值.并返回新的坐标值的四维向量.
+	///setY方法用来重新设置四维向量的y坐标值.并返回新的坐标值的四维向量.
 	*/
 	///<summary>setY</summary>
 	///<param name ="y" type="number">y坐标</param>
@@ -3763,7 +3763,7 @@ THREE.Vector4.prototype = {
 	},
 
 	/*
-	///setZ方法用来从新设置四维向量的z坐标值.并返回新的坐标值的四维向量.
+	///setZ方法用来重新设置四维向量的z坐标值.并返回新的坐标值的四维向量.
 	*/
 	///<summary>setZ</summary>
 	///<param name ="z" type="number">z坐标</param>
@@ -3777,7 +3777,7 @@ THREE.Vector4.prototype = {
 	},
 
 	/*
-	///setW方法用来从新设置四维向量的w坐标值.并返回新的坐标值的四维向量.
+	///setW方法用来重新设置四维向量的w坐标值.并返回新的坐标值的四维向量.
 	///	NOTE: 齐次坐标,是一种用来解决坐标变换等操作的快捷方法.
 	*/
 	///<summary>setW</summary>
@@ -3792,7 +3792,7 @@ THREE.Vector4.prototype = {
 	},
 
 	/*
-	///setComponent方法用来从新设置四维向量的(x,y,z,w)坐标值.并返回新的坐标值的四维向量.
+	///setComponent方法用来重新设置四维向量的(x,y,z,w)坐标值.并返回新的坐标值的四维向量.
 	///参数index取值为0,1,2 或者 3,取值为0,参数value设置x的坐标值,取值为1,参数value设置y的坐标,
 	///取值为2,参数value设置z的坐标,取值为3,参数value设置w的坐标.
 	*/
@@ -4476,7 +4476,7 @@ THREE.Vector4.prototype = {
 	/*
 	///negate方法将当前四维向量的(x,y,z,w)坐标值若为负数时,返回正数.
 	///	而当前四维向量的(x,y,z,w)坐标值若为正数时,返回负数.
-	/// NOTE:取当前四维向量的(x,y,z,w)坐标值相反数
+	/// NOTE:取当前四维向量的(x,y,z,w)坐标值相反数,经常用来翻转法线
 	*/
 	///<summary>negate</summary>
 	///<returns type="Vector4">返回取相反数后的四维向量</returns>
@@ -4736,7 +4736,7 @@ THREE.Euler.prototype = {
 	},
 
 	/*
-	///set x 方法用来从新设置Euler角的x值.并返回新的值的Euler角.
+	///set x 方法用来重新设置Euler角的x值.并返回新的值的Euler角.
 	///NOTE: set x()的用法是Euler.prototype.x=value(Euler.x = value),这种用法在除ie浏览器以外的浏览器上可以使用.
 	*/
 	///<summary>set x</summary>
@@ -4761,7 +4761,7 @@ THREE.Euler.prototype = {
 	},
 
 	/*
-	///set y 方法用来从新设置Euler角的y值.并返回新的值的Euler角.
+	///set y 方法用来重新设置Euler角的y值.并返回新的值的Euler角.
 	///NOTE: set y()的用法是Euler.prototype.y=value(Euler.y = value),这种用法在除ie浏览器以外的浏览器上可以使用.
 	*/
 	///<summary>set y</summary>
@@ -4786,7 +4786,7 @@ THREE.Euler.prototype = {
 	},
 
 	/*
-	///set z 方法用来从新设置Euler角的z值.并返回新的值的Euler角.
+	///set z 方法用来重新设置Euler角的z值.并返回新的值的Euler角.
 	///NOTE: set z()的用法是Euler.prototype.z=value(Euler.z = value),这种用法在除ie浏览器以外的浏览器上可以使用.
 	*/
 	///<summary>set z</summary>
@@ -4811,7 +4811,7 @@ THREE.Euler.prototype = {
 	},
 
 	/*
-	///set order 方法用来从新设置Euler角的order值.并返回新的值的Euler角.
+	///set order 方法用来重新设置Euler角的order值.并返回新的值的Euler角.
 	///NOTE: set order()的用法是Euler.prototype.order=value(Euler.order = value),这种用法在除ie浏览器以外的浏览器上可以使用.
 	///	NOTE: 参数(x,y,z,order)为可选参数,如果不指定参数(x,y,z,order),将创建一个坐标为(0,0,0,'XYZ')的Eular(欧拉角)对象.
 	/// NOTE: 参数order(旋转顺序) 默认顺序是'XYZ' 取值范围是['XYZ', 'YZX', 'ZXY', 'XZY', 'YXZ', 'ZYX' ]
@@ -4833,7 +4833,7 @@ THREE.Euler.prototype = {
 	///TODO:这里缺少getComponent()方法.
 
 	/*
-	///set方法用来从新设置Euler(欧拉角)的x,y,z,order值.并返回新的坐标值的Euler(欧拉角).
+	///set方法用来重新设置Euler(欧拉角)的x,y,z,order值.并返回新的坐标值的Euler(欧拉角).
 	/// TODO:修改set方法,兼容x,y,z,order参数省略支持多态.
 	*/
 	///<summary>set</summary>
@@ -5239,7 +5239,7 @@ THREE.Line3.prototype = {
 	constructor: THREE.Line3,		//构造器,返回对创建此对象的Line3函数的引用
 
 	/*
-	///set方法用来从新设置三维线段的起始点,结束点,start,end坐标值.并返回新的坐标值的三维线段.
+	///set方法用来重新设置三维线段的起始点,结束点,start,end坐标值.并返回新的坐标值的三维线段.
 	*/
 	///<summary>set</summary>
 	///<param name ="start" type="Vector3">起始点坐标</param>
@@ -5462,7 +5462,7 @@ THREE.Box2.prototype = {
 
 
 	/*
-	///set方法用来从新设置二维矩形边界的起始点,结束点,min,max坐标值.并返回新的坐标值的二维矩形边界.
+	///set方法用来重新设置二维矩形边界的起始点,结束点,min,max坐标值.并返回新的坐标值的二维矩形边界.
 	*/
 	///<summary>set</summary>
 	///<param name ="min" type="Vector2">边界的最小坐标值</param>
@@ -5860,7 +5860,7 @@ THREE.Box3.prototype = {
 	constructor: THREE.Box3,	//构造器,返回对创建此对象的Box3函数的引用
 
 	/*
-	///set方法用来从新设置立方体边界的起始点,结束点,min,max坐标值.并返回新的坐标值的立方体边界.
+	///set方法用来重新设置立方体边界的起始点,结束点,min,max坐标值.并返回新的坐标值的立方体边界.
 	*/
 	///<summary>set</summary>
 	///<param name ="min" type="Vector3">边界的最小坐标值</param>
@@ -6392,7 +6392,7 @@ THREE.Matrix3.prototype = {
 	constructor: THREE.Matrix3,	//构造器,返回对创建此对象的Matrix3函数的引用
 
 	/*
-	///set方法用来从新设置Matrix3(3x3矩阵)的元素值.并返回新的坐标值的Matrix3(3x3矩阵).
+	///set方法用来重新设置Matrix3(3x3矩阵)的元素值.并返回新的坐标值的Matrix3(3x3矩阵).
 	/// TODO:修改set方法,兼容n11, n12, n13, n21, n22, n23, n31, n32, n33参数省略支持多态.
 	*/
 	///<summary>set</summary>
@@ -6850,7 +6850,7 @@ THREE.Matrix4.prototype = {
 	constructor: THREE.Matrix4,	//构造器,返回对创建此对象的Matrix4函数的引用
 
 	/*
-	///set方法用来从新设置Matrix4(4x4矩阵)的元素值.并返回新的坐标值的Matrix4(4x4矩阵).
+	///set方法用来重新设置Matrix4(4x4矩阵)的元素值.并返回新的坐标值的Matrix4(4x4矩阵).
 	/// TODO:修改set方法,兼容 n11, n12, n13, n14, n21, n22, n23, n24, n31, n32, n33, n34, 41, 42, 43, 44 参数省略支持多态.
 	*/
 	///<summary>set</summary>
@@ -8213,7 +8213,7 @@ THREE.Ray.prototype = {
 	constructor: THREE.Ray,		//构造器,返回对创建此对象的Ray函数的引用
 
 	/*
-	///set方法用来从新设置射线的端点和方向(origin,direction).并返回新的射线.
+	///set方法用来重新设置射线的端点和方向(origin,direction).并返回新的射线.
 	*/
 	///<summary>set</summary>
 	///<param name ="origin" type="Vector3">x坐标</param>
@@ -8905,7 +8905,7 @@ THREE.Sphere.prototype = {
 	constructor: THREE.Sphere,	//构造器,返回对创建此对象的Sphere函数的引用
 
 	/*
-	///set方法用来从新设置球体的起始点,结束点,center,radius坐标值.并返回新半径,坐标值的球体.
+	///set方法用来重新设置球体的中心点坐标值,球体半径,center,radius坐标值.并返回新半径,坐标值的球体.
 	*/
 	///<summary>set</summary>
 	///<param name ="center" type="Vector3">中心点坐标值</param>
@@ -9309,44 +9309,91 @@ THREE.Frustum.prototype = {
  * @author bhouston / http://exocortex.com
  */
 
+/*
+///Plane对象的构造函数.用来在三维空间内创建一个法线向量为normal,从原点到平面的距离为constant的无限延展的二维平面对象.Plane对象的功能函数采用
+///定义构造的函数原型对象来实现.
+///
+///	用法: var normal = new Vector3(0,0,0),constant = 5.5; var Plane = new Plane(normal,constant);
+///创建一个法线向量是0,0,0原点到平面的距离是5.5的二维平面.
+*/
+///<summary>Plane</summary>
+///<param name ="normal" type="Vector3">平面法线向量</param>
+///<param name ="constant" type="Number">Number二维平面离原点的距离</param>
 THREE.Plane = function ( normal, constant ) {
 
-	this.normal = ( normal !== undefined ) ? normal : new THREE.Vector3( 1, 0, 0 );
-	this.constant = ( constant !== undefined ) ? constant : 0;
+	this.normal = ( normal !== undefined ) ? normal : new THREE.Vector3( 1, 0, 0 );	//赋值或者初始化normal
+	this.constant = ( constant !== undefined ) ? constant : 0;	//赋值或者初始化constant
 
 };
 
+/****************************************
+****下面是Plane对象提供的功能函数.
+****************************************/
 THREE.Plane.prototype = {
 
-	constructor: THREE.Plane,
+	constructor: THREE.Plane,	//构造器,返回对创建此对象的Plane函数的引用
 
+	/*
+	///set方法用来重新设置二维平面的法线向量normal,原点到平面的距离constant,并返回新的二维平面.
+	*/
+	///<summary>set</summary>
+	///<param name ="normal" type="Vector3">平面法线向量</param>
+	///<param name ="constant" type="Number">Number二维平面离原点的距离</param>
+	///<returns type="Plane">返回新的二维平面</returns>
 	set: function ( normal, constant ) {
 
 		this.normal.copy( normal );
 		this.constant = constant;
 
-		return this;
+		return this;		//返回新的二维平面
 
 	},
 
+	/*
+	///setComponents方法用来通过x,y,z,w分量重新设置二维平面的法线向量normal,原点到平面的距离constant,并返回新的二维平面.
+	*/
+	///<summary>setComponents</summary>
+	///<param name ="normal" type="Vector3">平面法线向量</param>
+	///<param name ="x" type="Number">平面法线向量x坐标</param>
+	///<param name ="y" type="Number">平面法线向量y坐标</param>
+	///<param name ="z" type="Number">平面法线向量z坐标</param>
+	///<param name ="w" type="Number">Number二维平面离原点的距离w</param>
+	///<returns type="Plane">返回新的二维平面</returns>
 	setComponents: function ( x, y, z, w ) {
 
 		this.normal.set( x, y, z );
 		this.constant = w;
 
-		return this;
+		return this;		//返回新的二维平面
 
 	},
 
+	/*
+	///setFromNormalAndCoplanarPoint方法用来通过参数normal(平面法线向量)和参数point(共面的点)重新设置二维平面的法线向量normal,原点到平面的距离constant,并返回新的二维平面.
+	*/
+	///<summary>setFromNormalAndCoplanarPoint</summary>
+	///<param name ="normal" type="Vector3">平面法线向量</param>
+	///<param name ="point" type="Vector3">共面的点</param>
+	///<returns type="Plane">返回新的二维平面</returns>
 	setFromNormalAndCoplanarPoint: function ( normal, point ) {
 
 		this.normal.copy( normal );
+													//下面point.dot()方法只接收this.normal,不接收normal,this.normal是被规范化的,是单位向量
 		this.constant = - point.dot( this.normal );	// must be this.normal, not normal, as this.normal is normalized
 
-		return this;
+		return this;	//并返回新的二维平面
 
 	},
 
+	/*
+	///setFromCoplanarPoints方法用来通过共面的点a,b,c重新设置二维平面的法线向量normal,原点到平面的距离constant,并返回新的二维平面.
+	/// NOTE:setFromCoplanarPoints方法接受的3个点a,b,c,需要按照逆时针方向的顺序传入,来确定发现的方向.
+	*/
+	///<summary>setFromCoplanarPoints</summary>
+	///<param name ="a" type="Vector3">共面的点a</param>
+	///<param name ="b" type="Vector3">共面的点b</param>
+	///<param name ="c" type="Vector3">共面的点c</param>
+	///<returns type="Plane">返回新的二维平面</returns>
 	setFromCoplanarPoints: function () {
 
 		var v1 = new THREE.Vector3();
@@ -9354,87 +9401,147 @@ THREE.Plane.prototype = {
 
 		return function ( a, b, c ) {
 
-			var normal = v1.subVectors( c, b ).cross( v2.subVectors( a, b ) ).normalize();
+			var normal = v1.subVectors( c, b ).cross( v2.subVectors( a, b ) ).normalize();	//先得到向量c,b的差,通过cross方法获得向量a,b差的交叉乘积(交叉乘积垂直于向量a,b所在的平面),然后在调用normalize()方法获得单位向量.
 
 			// Q: should an error be thrown if normal is zero (e.g. degenerate plane)?
+			//NOTE: 如果法向量normal是0,会产生一个无效的平面对象.
 
-			this.setFromNormalAndCoplanarPoint( normal, a );
+			this.setFromNormalAndCoplanarPoint( normal, a ); 	//setFromNormalAndCoplanarPoint方法用来通过参数normal(平面法线向量)和参数point(共面的点)重新设置二维平面的法线向量normal,原点到平面的距离constant,并返回新的二维平面.
 
-			return this;
+
+			return this;	//返回新的二维平面
 
 		};
 
 	}(),
 
 
+	/*
+	///copy方法用来复制二维平面的法线向量normal,原点到平面的距离constant值.返回新的二维平面
+	///TODO: copy方法和clone方法有什么不同?
+	*/
+	///<summary>copy</summary>
+	///<param name ="Plane" type="Plane">二维平面</param>
+	///<returns type="Plane">返回新的二维平面</returns>
 	copy: function ( plane ) {
 
 		this.normal.copy( plane.normal );
 		this.constant = plane.constant;
 
-		return this;
+		return this;	//返回新的二维平面
 
 	},
 
+	/*
+	///normalize方法用来规范化法线向量,并调整constant常量的值(获得单位平面).
+	*/
+	///<summary>normalize</summary>
+	///<returns type="Plane">返回规范化后的二维平面(获得单位平面)</returns>
 	normalize: function () {
 
 		// Note: will lead to a divide by zero if the plane is invalid.
+		// NOTE: 注意如果平面无效将产生除数是0的错误.
 
 		var inverseNormalLength = 1.0 / this.normal.length();
 		this.normal.multiplyScalar( inverseNormalLength );
 		this.constant *= inverseNormalLength;
 
-		return this;
+		return this;	//返回规范化的二维平面(获得单位平面)
 
 	},
 
+	/*
+	///negate方法用来翻转法线,获得当前平面的背面,
+	*/
+	///<summary>negate</summary>
+	///<returns type="Plane">返回当前平面的背面</returns>
 	negate: function () {
 
 		this.constant *= - 1;
-		this.normal.negate();
+		this.normal.negate();	//翻转法线,Vector3.negate方法将当前三维向量的(x,y,z)坐标值若为负数时,返回正数. 而当前三维向量的(x,y,z)坐标值若为正数时,返回负数. 
 
-		return this;
+		return this;	//返回当前平面的背面
 
 	},
 
+	/*
+	///distanceToPoint方法用来获得三维空间内一点到Plane二维平面对象表面的最小长度.
+	*/
+	///<summary>distanceToPoint</summary>
+	///<param name ="point" type="Vector3">一个三维空间内的Vector3的三维点坐标</param>
+	///<returns type="Number">返回三维空间内一点到Plane二维平面对象表面的最小长度.</returns>
 	distanceToPoint: function ( point ) {
 
-		return this.normal.dot( point ) + this.constant;
+		return this.normal.dot( point ) + this.constant;	//返回三维空间内一点到Plane二维平面对象表面的最小长度
 
 	},
 
+	/*
+	///distanceToPoint方法用来获得Plane二维平面对象到三维空间内一个球体表面的最小长度.()
+	*/
+	///<summary>distanceToPoint</summary>
+	///<param name ="sphere" type="Sphere">一个三维空间内的Sphere的球体对象</param>
+	///<returns type="Number">返回三维空间内Plane二维平面对象到三维空间内一个球体表面的最小长度.</returns>
 	distanceToSphere: function ( sphere ) {
 
-		return this.distanceToPoint( sphere.center ) - sphere.radius;
+		return this.distanceToPoint( sphere.center ) - sphere.radius;	//返回三维空间内Plane二维平面对象到三维空间内一个球体表面的最小长度
 
 	},
 
+	/*
+	///projectPoint方法返回三维空间中一点到当前平面的投影.点到面上的投影等于从参数point到平面上的垂足,所以从垂足画条线到点垂直于平面.
+	*/
+	///<summary>projectPoint</summary>
+	///<param name ="point" type="Vector3">Vector3三维向量</param>
+	///<param name ="optionalTarget" type="Vector3">可选参数,接收返回结果</param>
+	///<returns type="Number">返回点到平面的投影</returns>
 	projectPoint: function ( point, optionalTarget ) {
 
-		return this.orthoPoint( point, optionalTarget ).sub( point ).negate();
+		return this.orthoPoint( point, optionalTarget ).sub( point ).negate();	//调用orthoPoint()方法,减去point,返回取反的结果
 
 	},
 
+	/*
+	///orthoPoint方法返回一个与当前二维平面对象法线向量方向相同,与参数point到平面距离相等大小的向量(垂足).如果设置了optionalTarget参数,将结果保存在optionalTarget里.
+	*/
+	///<summary>orthoPoint</summary>
+	///<param name ="point" type="Vector3">Vector3三维向量</param>
+	///<param name ="optionalTarget" type="Vector3">可选参数,接收返回结果</param>
+	///<returns type="Vector3">返回一个与当前二维平面对象法线向量方向相同,与参数point到平面距离相等大小的向量(垂足).</returns>
 	orthoPoint: function ( point, optionalTarget ) {
 
-		var perpendicularMagnitude = this.distanceToPoint( point );
+		var perpendicularMagnitude = this.distanceToPoint( point );	//获得平面到参数point的距离,赋值给prependicularMagnitude
 
-		var result = optionalTarget || new THREE.Vector3();
-		return result.copy( this.normal ).multiplyScalar( perpendicularMagnitude );
+		var result = optionalTarget || new THREE.Vector3();	//生命变量resault,用来存放结果
+		return result.copy( this.normal ).multiplyScalar( perpendicularMagnitude );	//调用multiplyScalar(perpendicularMagnitude)方法,将当前二维平面的法向量的分量x,y,z分别乘以获得平面到参数point的距离.最后返回计算结果.
 
 	},
 
+	/*
+	///isIntersectionLine方法获取当前二维平面是否与参数line相交,返回true 或者 false
+	*/
+	///<summary>isIntersectionLine</summary>
+	///<param name ="line" type="Line3">三维空间中的线Line3</param>
+	///<returns type="Boolean">返回true 或者 false</returns>
 	isIntersectionLine: function ( line ) {
 
 		// Note: this tests if a line intersects the plane, not whether it (or its end-points) are coplanar with it.
+		// NOTE:isIntersectionLine()是测试线和面是否相交,不是误以为线和面是否共面
 
 		var startSign = this.distanceToPoint( line.start );
 		var endSign = this.distanceToPoint( line.end );
 
-		return ( startSign < 0 && endSign > 0 ) || ( endSign < 0 && startSign > 0 );
+		return ( startSign < 0 && endSign > 0 ) || ( endSign < 0 && startSign > 0 );	//返回true 或者 false
 
 	},
 
+	/*
+	///intersectLine方法获取当前二维平面与参数line相交的交点,如果和参数Line不相交返回undefined,如果线和当前二维平面共面返回线的起点.
+	*/
+	///<summary>isIntersectionLine</summary>
+	///<param name ="line" type="Line3">三维空间中的线Line3</param>
+	///<param name ="optionalTarget" type="Vector3">可选参数,接收返回结果</param>
+	///<returns type="Boolean">返回当前二维平面与参数line相交的交点,如果和参数Line不相交或其它未知返回undefined,如果线和当前二维平面共面返回线的起点.</returns>
 	intersectLine: function () {
 
 		var v1 = new THREE.Vector3();
@@ -9450,6 +9557,7 @@ THREE.Plane.prototype = {
 			if ( denominator == 0 ) {
 
 				// line is coplanar, return origin
+				// 如果线和当前二维平面共面返回线的起点
 				if ( this.distanceToPoint( line.start ) == 0 ) {
 
 					return result.copy( line.start );
@@ -9457,6 +9565,7 @@ THREE.Plane.prototype = {
 				}
 
 				// Unsure if this is the correct method to handle this case.
+				// 如果其它未知返回undefined
 				return undefined;
 
 			}
@@ -9465,24 +9574,38 @@ THREE.Plane.prototype = {
 
 			if ( t < 0 || t > 1 ) {
 
-				return undefined;
+				return undefined;	//如果和参数Line不相交返回undefined
 
 			}
 
-			return result.copy( direction ).multiplyScalar( t ).add( line.start );
+			return result.copy( direction ).multiplyScalar( t ).add( line.start );	//返回当前二维平面与参数line相交的交点
 
 		};
 
 	}(),
 
 
+	/*
+	///coplanarPoint方法获取当前二维平面的法线向量到当前二维平面投影(垂足,与当前平面的共面的点).
+	///TODO:这里没有弄明白,有时间在弄清楚,高中几何都快忘光了,钻牛角尖了.不过知道在下面应用变换时调用了.
+	*/
+	///<summary>coplanarPoint</summary>
+	///<param name ="optionalTarget" type="Vector3">可选参数,接收返回结果</param>
+	///<returns type="Boolean">返回共面的点.</returns>
 	coplanarPoint: function ( optionalTarget ) {
 
 		var result = optionalTarget || new THREE.Vector3();
-		return result.copy( this.normal ).multiplyScalar( - this.constant );
+		return result.copy( this.normal ).multiplyScalar( - this.constant );	//返回共面的点
 
 	},
 
+	/*
+	///applyMatrix4方法通过传递matrix(旋转,缩放,移动等变换矩阵)对当前Plane二维平面对象的法线向量normal和,应用变换.
+	*/
+	///<summary>applyMatrix4</summary>
+	///<param name ="matrix" type="Matrix4">(旋转,缩放,移动等变换矩阵</param>
+	///<param name ="optionalNormalMatrix" type="Matrix3">可选参数,如果设置了就会对法线应用(旋转,缩放,移动等变换矩阵</param>
+	///<returns type="Boolean">返回变换后的二维平面.</returns>
 	applyMatrix4: function () {
 
 		var v1 = new THREE.Vector3();
@@ -9496,34 +9619,51 @@ THREE.Plane.prototype = {
 			var normalMatrix = optionalNormalMatrix || m1.getNormalMatrix( matrix );
 			var newNormal = v1.copy( this.normal ).applyMatrix3( normalMatrix );
 
-			var newCoplanarPoint = this.coplanarPoint( v2 );
+			var newCoplanarPoint = this.coplanarPoint( v2 );	//获得共面的点
 			newCoplanarPoint.applyMatrix4( matrix );
 
-			this.setFromNormalAndCoplanarPoint( newNormal, newCoplanarPoint );
+			this.setFromNormalAndCoplanarPoint( newNormal, newCoplanarPoint );	//setFromNormalAndCoplanarPoint方法用来通过参数normal(平面法线向量)和参数point(共面的点)重新设置二维平面的法线向量normal,原点到平面的距离constant,并返回新的二维平面.
 
-			return this;
+			return this;		//返回变换后的二维平面
 
 		};
 
 	}(),
 
+	/*
+	///translate方法用来通过参数offset,移动当前二维平面的位置.
+	*/
+	///<summary>translate</summary>
+	///<param name ="offset" type="Vector3">偏移量</param>
+	///<returns type="Boolean">返回新的二维平面</returns>
 	translate: function ( offset ) {
 
 		this.constant = this.constant - offset.dot( this.normal );
 
-		return this;
+		return this;	//返回新的二维平面
 
 	},
 
+	/*
+	///equals方法用来获得参数Plane(一个Plane的二维平面)是否与当前二维平面完全相等,即法线向量normal和半径相等.
+	*/
+	///<summary>equals</summary>
+	///<param name ="Plane" type="Plane">一个Plane的二维平面</param>
+	///<returns type="Boolean">返回true 或者 false</returns>
 	equals: function ( plane ) {
 
-		return plane.normal.equals( this.normal ) && ( plane.constant == this.constant );
+		return plane.normal.equals( this.normal ) && ( plane.constant == this.constant );	//返回true 或者 false
 
 	},
 
+	/*clone方法
+	///clone方法克隆一个二维平面对象.
+	*/
+	///<summary>clone</summary>
+	///<returns type="Plane">返回二维平面对象</returns>	
 	clone: function () {
 
-		return new THREE.Plane().copy( this );
+		return new THREE.Plane().copy( this );	//返回二维平面对象
 
 	}
 
