@@ -134,7 +134,7 @@ THREE.Geometry.prototype = {
 	*/
 	///<summary>applyMatrix</summary>
 	///<param name ="m" type="Matrix4">仿射矩阵</param>
-	///<returns type="Object3D">返回新的Geometry对象</returns>
+	///<returns type="Geometry">返回新的Geometry对象</returns>
 	applyMatrix: function ( matrix ) {
 
 		var normalMatrix = new THREE.Matrix3().getNormalMatrix( matrix );	//调用THREE.Matrix3().getNormalMatrix方法,获得规范化的matrix
@@ -875,7 +875,7 @@ THREE.Geometry.prototype = {
 	///<summary>makeGroups</summary>
 	///<param name ="usesFaceMaterial" type="Number">可选参数,设置三角面对象的材质索引</param>
 	///<param name ="maxVerticesInGroup" type="Number">可选参数,最大顶点数量</param>
-	///<returns type="Object">返回分离出去的对象</returns>
+	///<returns type="Geometry">返回分离出去的对象</returns>
 	makeGroups: ( function () {
 
 		var geometryGroupCounter = 0;
