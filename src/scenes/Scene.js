@@ -1,10 +1,13 @@
 /**
  * @author mrdoob / http://mrdoob.com/
  */
-
+/*
+///Scene是场景对象,所有的对象,灯光,动画,骨骼等都需要放置在场景内.Scene对象的功能函数采用定义构造的函数原型对象来实现.
+*/
+///<summary>Scene</summary>
 THREE.Scene = function () {
 
-	THREE.Object3D.call( this );
+	THREE.Object3D.call( this );	//调用Object3D对象的call方法,将原本属于Object3D的方法交给当前对象Scene来使用.
 
 	this.fog = null;		//场景的雾效属性
 	this.overrideMaterial = null;		//场景的材质属性,默认为null,如果设置了这个属性,场景中的所有对象渲染成这个材质.
@@ -27,7 +30,7 @@ THREE.Scene = function () {
 /*************************************************
 ****下面是Scene对象的方法属性定义,继承自Object3D
 **************************************************/
-THREE.Scene.prototype = Object.create( THREE.Object3D.prototype );
+THREE.Scene.prototype = Object.create( THREE.Object3D.prototype );	//Scene对象从THREE.Objec3D的原型继承所有属性方法
 
 /************************************下面的方法已经在新版中删除******************************************
 //
