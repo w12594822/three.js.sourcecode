@@ -6,12 +6,12 @@
 
 THREE.Texture = function ( image, mapping, wrapS, wrapT, magFilter, minFilter, format, type, anisotropy ) {
 
-	this.id = THREE.TextureIdCount ++;
-	this.uuid = THREE.Math.generateUUID();
+	this.id = THREE.TextureIdCount ++;		//纹理属性id
+	this.uuid = THREE.Math.generateUUID();	//纹理uuid(通用唯一标识码)属性
 
-	this.name = '';
+	this.name = '';		//纹理名称属性,可有可无
 
-	this.image = image !== undefined ? image : THREE.Texture.DEFAULT_IMAGE;
+	this.image = image !== undefined ? image : THREE.Texture.DEFAULT_IMAGE;		//纹理的图片,最重要的属性是image，这是一个JavaScript Image类型对象。
 	this.mipmaps = [];
 
 	this.mapping = mapping !== undefined ? mapping : THREE.Texture.DEFAULT_MAPPING;

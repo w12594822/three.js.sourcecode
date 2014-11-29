@@ -43,11 +43,11 @@ THREE.PCFSoftShadowMap = 2;			//柔化边缘的软阴影贴图
 //材质常量
 
 // side
-//  边
+//  面,模型的正面,背面,双面是否附着材质
 
-THREE.FrontSide = 0;
-THREE.BackSide = 1;
-THREE.DoubleSide = 2;
+THREE.FrontSide = 0;	//材质只附着正面
+THREE.BackSide = 1;		//材质只附着背面
+THREE.DoubleSide = 2;	//正面背面都附着材质
 
 // shading
 // 着色处理
@@ -64,14 +64,15 @@ THREE.FaceColors = 1;
 THREE.VertexColors = 2;
 
 // blending modes
-//混合模式
+//材质混合混合模式类型,有相加,相减,相乘,自定义等将不同的材质,颜色混合的方式
+//TODO:有时间可以自定义几种混合模式试试.实现一些特殊的效果.
 
-THREE.NoBlending = 0;
-THREE.NormalBlending = 1;
-THREE.AdditiveBlending = 2;
-THREE.SubtractiveBlending = 3;
-THREE.MultiplyBlending = 4;
-THREE.CustomBlending = 5;
+THREE.NoBlending = 0;	//没有混合
+THREE.NormalBlending = 1;	//普通混合
+THREE.AdditiveBlending = 2;	//相加
+THREE.SubtractiveBlending = 3;	//相减
+THREE.MultiplyBlending = 4;	//相乘
+THREE.CustomBlending = 5;	//自定义
 
 // custom blending equations
 // (numbers start from 100 not to clash with other

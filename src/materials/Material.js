@@ -5,17 +5,20 @@
 
 THREE.Material = function () {
 
-	this.id = THREE.MaterialIdCount ++;
-	this.uuid = THREE.Math.generateUUID();
+	this.id = THREE.MaterialIdCount ++;		//材质属性id
+	this.uuid = THREE.Math.generateUUID();	//材质uuid(通用唯一标识码)属性
 
-	this.name = '';
+	this.name = '';		//材质名称属性,可有可无
 
-	this.side = THREE.FrontSide;
+	this.side = THREE.FrontSide;	//模型正面只附着材质,还有选项THREE.BackSide 材质只附着背面 ,和选项THREE.DoubleSide = 2;	模型双面都附着材质
 
-	this.opacity = 1;
-	this.transparent = false;
+	this.opacity = 1;		//属性opacity为一个0-1区间的值，表明透明度。属性transparent指定是否使用透明，只有在该值为真的时候，才会将其与混合（透明是渲染像素时，待渲染值与已存在值共同作用计算出渲染后像素值，达到混合的效果）。
+	this.transparent = false;	//是否使用透明.
 
-	this.blending = THREE.NormalBlending;
+	//属性blending，blendSrc，blendDst，blendEquation指定了混合方式和混合源Src和混合像素已有的像元值Dst的权重指定方式。默认情况下（如构造函数中赋的缺省值），新的像元值等于：新值×alpha+旧值×(1-alpha)。
+	this.blending = THREE.NormalBlending;	//材质混合混合模式类型
+	//材质混合混合模式类型,有相加,相减,相乘,自定义等将不同的材质,颜色混合的方式
+	//TODO:有时间可以自定义几种混合模式试试.实现一些特殊的效果.
 
 	this.blendSrc = THREE.SrcAlphaFactor;
 	this.blendDst = THREE.OneMinusSrcAlphaFactor;
