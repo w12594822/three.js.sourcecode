@@ -34,10 +34,10 @@ THREE.Texture = function ( image, mapping, wrapS, wrapT, magFilter, minFilter, f
 
 
 	this.mapping = mapping !== undefined ? mapping : THREE.Texture.DEFAULT_MAPPING;	//映射模式,有THREE.UVMapping平展映射,THREE.CubeReflectionMapping 立方体反射映射,THREE.CubeRefractionMapping立方体折射映射,THREE.SphericalReflectionMapping球面反射映射,THREE.SphericalRefractionMapping球面折射映射.
-
-	this.wrapS = wrapS !== undefined ? wrapS : THREE.ClampToEdgeWrapping; //横向覆盖模式,默认为THREE.ClampToEdgeWrapping,(夹取),超过1.0的值被固定为1.0。超过1.0的其它地方的纹理，沿用最后像素的纹理。用于当叠加过滤时，需要从0.0到1.0精确覆盖且没有模糊边界的纹理。
+	//关于纹理s方向,t方向参考http://blog.csdn.net/kylaoshu364/article/details/5608851
+	this.wrapS = wrapS !== undefined ? wrapS : THREE.ClampToEdgeWrapping; //S方向覆盖模式,默认为THREE.ClampToEdgeWrapping,(夹取),超过1.0的值被固定为1.0。超过1.0的其它地方的纹理，沿用最后像素的纹理。用于当叠加过滤时，需要从0.0到1.0精确覆盖且没有模糊边界的纹理。
 																		  //还有THREE.RepeatWrapping(重复)和THREE.MirroredRepeatWrapping(镜像)
-	this.wrapT = wrapT !== undefined ? wrapT : THREE.ClampToEdgeWrapping; //纵向覆盖模式,默认为THREE.ClampToEdgeWrapping,(夹取),超过1.0的值被固定为1.0。超过1.0的其它地方的纹理，沿用最后像素的纹理。用于当叠加过滤时，需要从0.0到1.0精确覆盖且没有模糊边界的纹理。
+	this.wrapT = wrapT !== undefined ? wrapT : THREE.ClampToEdgeWrapping; //T方向覆盖模式,默认为THREE.ClampToEdgeWrapping,(夹取),超过1.0的值被固定为1.0。超过1.0的其它地方的纹理，沿用最后像素的纹理。用于当叠加过滤时，需要从0.0到1.0精确覆盖且没有模糊边界的纹理。
 																		  //还有THREE.RepeatWrapping(重复)和THREE.MirroredRepeatWrapping(镜像)
 
     /*
@@ -47,10 +47,18 @@ THREE.Texture = function ( image, mapping, wrapS, wrapT, magFilter, minFilter, f
 		在对三维表面铺设纹理的时候，通过纹理映射技术将纹素映射到恰当的输出图像像素上。在当今的计算机上，这个过程主要是由图形卡完成的。
 		纹理工序起始于空间中的某一位置。这个位置可以是在世界坐标系中，但是一般情况下会设定在物体坐标系中。这样纹理会随着物体运动。然后通过投射的方式将其位置（坐标）从三维矢量值转化为0到1范围的二维矢量值（即uv）。再将这个二维矢量值与纹理的分辨率相乘从而获得纹素的位置。
 		当所需纹素的位置不是整数的时候，需要使用纹理滤镜进行处理。
+
+	// 纹理在放大或缩小时的过滤方式,过滤方式,有THREE.NearestFilter在纹理基层上执行最邻近过滤,THREE.NearestMipMapNearestFilter在mip层之间执行线性插补，并执行最临近的过滤,
+		//THREE.NearestMipMapLinearFilter选择最临近的mip层，并执行最临近的过滤,THREE.LinearFilter在纹理基层上执行线性过滤
+		//THREE.LinearMipMapNearestFilter选择最临近的mip层，并执行线性过滤,THREE.LinearMipMapLinearFilter在mip层之间执行线性插补，并执行线性过滤
+
+	参考:http://blog.csdn.net/kkk328/article/details/7055934
+	参考:http://xiaxveliang.blog.163.com/blog/static/297080342013467552467/	
+
 	*/
 
-	this.magFilter = magFilter !== undefined ? magFilter : THREE.LinearFilter;	//纹理在放大时的过滤方式,线性过滤
-	this.minFilter = minFilter !== undefined ? minFilter : THREE.LinearMipMapLinearFilter;	//纹理在缩小时的过滤方式,线性过滤
+	this.magFilter = magFilter !== undefined ? magFilter : THREE.LinearFilter;	//纹理在放大时的过滤方式,THREE.LinearFilter在纹理基层上执行线性过滤
+	this.minFilter = minFilter !== undefined ? minFilter : THREE.LinearMipMapLinearFilter;	//纹理在缩小时的过滤方式,THREE.LinearMipMapNearestFilter选择最临近的mip层，并执行线性过滤
 
 	this.anisotropy = anisotropy !== undefined ? anisotropy : 1;
 
@@ -91,6 +99,12 @@ THREE.Texture.prototype = {
 
 	},
 
+	/*clone方法
+	///clone方法克隆一个四元数对象.
+	*/
+	///<summary>clone</summary>
+	///<param name ="texture" type="Texture">接受结果的纹理对象</param>
+	///<returns type="Quaternion">返回四元数对象</returns>	
 	clone: function ( texture ) {
 
 		if ( texture === undefined ) texture = new THREE.Texture();

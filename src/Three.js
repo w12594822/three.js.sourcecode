@@ -134,14 +134,16 @@ THREE.ClampToEdgeWrapping = 1001;	//ClampToEdgeWrapping(夹取),超过1.0的值�
 THREE.MirroredRepeatWrapping = 1002;	//MirroredRepeatWrapping(镜像),每到边界处纹理翻转，意思就是每个1.0 u或者v处纹理被镜像翻转。
 
 // Filters
-// 过滤器
+// 纹理在放大或缩小时的过滤方式,过滤方式,有THREE.NearestFilter在纹理基层上执行最邻近过滤,THREE.NearestMipMapNearestFilter在mip层之间执行线性插补，并执行最临近的过滤,
+				//THREE.NearestMipMapLinearFilter选择最临近的mip层，并执行最临近的过滤,THREE.LinearFilter在纹理基层上执行线性过滤
+				//THREE.LinearMipMapNearestFilter选择最临近的mip层，并执行线性过滤,THREE.LinearMipMapLinearFilter在mip层之间执行线性插补，并执行线性过滤
 
-THREE.NearestFilter = 1003;
-THREE.NearestMipMapNearestFilter = 1004;
-THREE.NearestMipMapLinearFilter = 1005;
-THREE.LinearFilter = 1006;
-THREE.LinearMipMapNearestFilter = 1007;
-THREE.LinearMipMapLinearFilter = 1008;
+THREE.NearestFilter = 1003;		//THREE.NearestFilter在纹理基层上执行最邻近过滤
+THREE.NearestMipMapNearestFilter = 1004;	//THREE.NearestMipMapNearestFilter在mip层之间执行线性插补，并执行最临近的过滤
+THREE.NearestMipMapLinearFilter = 1005;		//THREE.NearestMipMapLinearFilter选择最临近的mip层，并执行最临近的过滤
+THREE.LinearFilter = 1006;					//THREE.LinearFilter在纹理基层上执行线性过滤
+THREE.LinearMipMapNearestFilter = 1007;		//THREE.LinearMipMapNearestFilter选择最临近的mip层，并执行线性过滤
+THREE.LinearMipMapLinearFilter = 1008;		//THREE.LinearMipMapLinearFilter在mip层之间执行线性插补，并执行线性过滤
 
 // Data types
 // 数据类型
