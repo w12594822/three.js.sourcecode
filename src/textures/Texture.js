@@ -23,7 +23,7 @@
 ///
 */
 ///<summary>Texture</summary>
-///<param name ="image" type="String">属性名称</param>
+///<param name ="image" type="Image">JavaScript Image类型对象</param>
 ///<param name ="mapping" type="Number">映射模式,可用常量参考下面注释</param>
 ///<param name ="wrapS" type="Number">S方向覆盖模式,可用常量参考下面注释</param>
 ///<param name ="wrapT" type="Number">T方向覆盖模式,可用常量参考下面注释</param>
@@ -340,7 +340,7 @@ THREE.Texture.prototype = {
 	*/
 	///<summary>clone</summary>
 	///<param name ="texture" type="Texture">接受结果的纹理对象</param>
-	///<returns type="Quaternion">返回纹理对象</returns>	
+	///<returns type="Texture">返回纹理对象</returns>	
 	clone: function ( texture ) {
 
 		if ( texture === undefined ) texture = new THREE.Texture();
