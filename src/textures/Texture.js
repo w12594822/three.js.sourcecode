@@ -4,11 +4,12 @@
  * @author szimek / https://github.com/szimek/
  */
 /*
-///BufferGeometry类用来和BufferAttribute配合使用,更多细节可以参考官方的样例http://threejs.org/
-/// 这个类是另一种创建几何体对象的方式,它将所有的数据包括顶点位置,法线,面,颜色,uv和其它的自定义属性存在缓冲区,
-/// 这样可以减少GPU的负荷,BufferGeometry同样也比Geometry对象复杂,增加了使用的难度,这里的属性都是存放在数组中,
-/// 比如顶点位置不是Vector3对象,颜色也不是color对象,而是数组.需要访问这些属性,需要从属性缓冲区中读原始数据.
-/// NOTE:根据BufferGeometry类特性,我们在创建一些静态对象,实例化后不经常操作的对象时,选择这个类.
+///Texture类用来为面创建一个反射折射或者纹理贴图对象
+/// 这个类是最重要的属性是image，这是一个JavaScript Image类型对象。传入的第一个参数就是该对象，
+///后面的对象都是可选的，如果缺省就会填充默认值，而且往往都是填充默认值。
+///属性magFileter和minFileter指定纹理在放大和缩小时的过滤方式：最临近点、双线性内插等。
+///从url中生成一个texture，需要调用Three.ImageUtils.loadTexture(paras)，
+///该函数返回一个texture类型对象。在函数内部又调用了THREE.ImageLoader.load(paras)函数，这个函数内部又调用了THREE.Texture()构造函数，生成纹理。
 ///
 ///
 ///Example
