@@ -13,7 +13,7 @@
 ///<summary>PointLight</summary>
 ///<param name ="color" type="THREE.Color">灯光的颜色属性</param>
 ///<param name ="intensity" type="Number">灯光的强度,默认是1</param>
-///<param name ="distance" type="Number">灯光的长度属性,默认是0</param>
+///<param name ="distance" type="Number">灯光的长度属性,从灯光的position位置,开始衰减,衰减到distance的长度,默认是0</param>
 ///<returns type="PointLight">返回PointLight,点光源.</returns>
 THREE.PointLight = function ( color, intensity, distance ) {
 
