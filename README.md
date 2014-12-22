@@ -145,7 +145,7 @@ src
 --materials
 ¦      LineBasicMaterial.js - - - - - - - - - - - - - - - - - - - - - - - - - - -  0%
 ¦      LineDashedMaterial.js - - - - - - - - - - - - - - - - - - - - - - - - - --  0%
-¦      Material.js - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  - -  0%
+¦      Material.js - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  - -100%
 ¦      MeshBasicMaterial.js - - - - - - - - - - - - - - - - - - - - - - - - - - -  0%
 ¦      MeshDepthMaterial.js - - - - - - - - - - - - - - - - - - - - - - - - - - -  0%
 ¦      MeshFaceMaterial.js - - - - - - - - - - - - - - - - - - - - - - - - -  - -  0%
