@@ -2,7 +2,13 @@
  * @author mrdoob / http://mrdoob.com/
  * @author alteredq / http://alteredqualia.com/
  */
-
+/*
+///Material是材质对象的抽象基类,当创建材质时都从这个类继承.Material对象的功能函数采用定义构造的函数原型对象来实现.
+/// 简单的说就是物体看起来是什么质地。材质可以看成是材料和质感的结合。在渲染程式中，它是表面各可视属性的结合，
+/// 这些可视属性是指表面的色彩、纹理、光滑度、透明度、反射率、折射率、发光度等。
+///
+*/
+///<summary>Material</summary>
 THREE.Material = function () {
 
 	this.id = THREE.MaterialIdCount ++;		//材质属性id
@@ -247,33 +253,151 @@ THREE.Material = function () {
 	        e. D为glBlendFunc函数设置时的第二个参数,目标颜色因子
 	**********************************************设置混合方程式*********************************************************/
 	this.blendEquation = THREE.AddEquation;		//混合方程式,默认为THREE.AddEquation,相加,看上面公式
+	/************************深度测试************************************************************************************
+	参考:http://blog.csdn.net/zhongjling/article/details/7573055
+	openGL里常出现深度测试，一直不清楚。今天就来弄清楚。
+	  （1）什么是深度？
+	        深度其实就是该象素点在3d世界中距离摄象机的距离（绘制坐标），深度缓存中存储着每个象素点（绘制在屏幕上的）的深度值！
+	   深度值（Z值）越大，则离摄像机越远。
+	   深度值是存贮在深度缓存里面的，我们用深度缓存的位数来衡量深度缓存的精度。深度缓存位数越高，则精确度越高，目前的显卡一般都可支持16位的Z Buffer，一些高级的显卡已经可以支持32位的Z Buffer，但一般用24位Z Buffer就已经足够了。
+	  （2）为什么需要深度？
+	   在不使用深度测试的时候，如果我们先绘制一个距离较近的物体，再绘制距离较远的物体，则距离远的物体因为后绘制，会把距离近的物体覆盖掉，这样的效果并不是我们所希望的。而有了深度缓冲以后，绘制物体的顺序就不那么重要了，都能按照远近（Z值）正常显示，这很关键。
+	        实际上，只要存在深度缓冲区，无论是否启用深度测试，OpenGL在像素被绘制时都会尝试将深度数据写入到缓冲区内，除非调用了glDepthMask(GL_FALSE)来禁止写入。这些深度数据除了用于常规的测试外，还可以有一些有趣的用途，比如绘制阴影等等。
+	 （2）启用深度测试
+	     使用 glEnable(GL_DEPTH_TEST);
+	     在默认情况是将需要绘制的新像素的z值与深度缓冲区中对应位置的z值进行比较，如果比深度缓存中的值小，那么用新像素的颜色值更新帧缓存中对应像素的颜色值。
+	     但是可以使用glDepthFunc(func)来对这种默认测试方式进行修改。
+	     其中参数func的值可以为GL_NEVER（没有处理）、GL_ALWAYS（处理所有）、GL_LESS（小于）、GL_LEQUAL（小于等于）、GL_EQUAL（等于）、GL_GEQUAL（大于等于）、GL_GREATER（大于）或GL_NOTEQUAL（不等于），其中默认值是GL_LESS。
+	    一般来将，使用glDepthFunc(GL_LEQUAL);来表达一般物体之间的遮挡关系。 
+	（3）启用了深度测试，那么这就不适用于同时绘制不透明物体。
 
-	this.depthTest = true;
-	this.depthWrite = true;
+	备注：
+		绘制半透明物体时，需注意：在绘制半透明物体时前，还需要利用glDepthMask(GL_FALSE)将深度缓冲区设置为只读形式，否则可能出现画面错误。为什么呢，因为画透明物体时，将使用混色，这时就不能继续使用深度模式，而是利用混色函数来进行混合。这一来，就可以使用混合函数绘制半透明物体了。
 
-	this.polygonOffset = false;
-	this.polygonOffsetFactor = 0;
-	this.polygonOffsetUnits = 0;
+	*****************************深度测试*******************************************************************************/
+	this.depthTest = true;		//深度测试,默认为true,如果设置为false,在场景中远处的对象不被近处的对象遮挡
 
-	this.alphaTest = 0;
+	/*****************************************************************************************************************
+	如果flag是GL_FLASE，那么向深度缓冲区写入是禁止的。否则，就是允许的。初始时，是允许向深度缓冲区写入数据的。
+	glDepthMask指定是否允许向深度缓冲区写入数据。如果flag是GL_FLASE，那么向深度缓冲区写入是禁止的。否则，就是允许的。
+	初始时，是允许向深度缓冲区写入数据的。
+	如果在glBegin和glEnd之间执行glDepthMask，会产生GL_INVALID_OPERATION。
+	参考:http://blog.csdn.net/wlsgzl/article/details/13022959
+	******************************************************************************************************************/
+	this.depthWrite = true;		//允许或禁止向深度缓冲区写入数据,默认为true,指定是否允许向深度缓冲区写入数据。
+
+
+	this.polygonOffset = false;	//多边形位移,当两个面共面时,会出现十分难看的z - fighting 问题,要解决此问题可以使用, Polygon Offset,
+								//参考:https://www.opengl.org/sdk/docs/man2/xhtml/glPolygonOffset.xml
+	this.polygonOffsetFactor = 0;	//多边形位移因子
+	this.polygonOffsetUnits = 0;	//多边形位移单位
+
+	/*************************alpha测试*******************************************************************************
+	参考:http://blog.sina.com.cn/s/blog_471132920101d8z1.html
+	原创文章如需转载请注明：转载自风宇冲Unity3D教程学院
+	                       Shader第十二讲 Alpha测试
+
+	引言：本讲和下一讲主要讲Alpha即透明通道有关的内容。RGBA，其中最终在屏幕上显示的只有RGB即 红绿蓝组成的颜色，Alpha并没有任何颜色显示。A只是辅助颜色运算特别是多图层运算而已。例如在单图层的情况下(1,1,1,0.8)输出的是(1,1,1)*0.8即 浅灰色(0.8,0.8,0.8)，和(0.8,0.8,0.8)是等价的.但是假如不再是单图层而背景为绿色(0,1,0,1)的时候，(0.8,0.8,0.8)就不知道怎么去运算了，而(1,1,1,0.8)知道。看不懂这段引言？没关系，往下看，当学完第五讲和第六讲后再回来看就自然能深刻理解了。
+
+	什么是通道：
+	通道是8位的灰度图像，能够显示256种灰度，用来表示颜色的RGBA值。R=Red红色，G=Green绿色，B=blue蓝色，A=alhpa透明值, 其中RGB为原色通道，A为透明通道。
+	在通道中，以白色代替透明表示要处理的部分（选择区域）；以黑色表示不需处理的部分（非选择区域）
+	所有通道取值范围是 [0,255]， 但是在Shader里取值范围是[0,1], 0和1分辨对应0和255
+	什么是Alpha通道：
+	定义：一般图形卡具有32位总线，附加的8位信号就被用来保存不可见的透明度信号以方便处理用，这就是Alpha通道。白色的alpha象素用以定义不透明的彩色象素，而黑色的alpha象素用以定义透明象素，黑白之间的灰阶用来定义半透明象素。
+	简而言之：Alpha通道取值同样为[0,255] 以及Shader[0,1], 值越小最透明，值最大越不透明。在Shader里即0为透明，什么都没有,编辑器显示为黑色。1则不透明，全部都显示，编辑器其显示为白色如下图。
+	【风宇冲】Unity3D教程宝典之Shader篇：第十二讲 <wbr>Alpha测试
+
+	什么是Alpha Test：
+	Alpha Test ,中文就是透明度测试。简而言之就是V&F shader中最后fragment函数输出的该点颜色值（即上一讲frag的输出half4）的alpha值与固定值进行比较。 AlphaTest语句通常位于Pass{}中的起始位置。
+
+	语法：
+	第一种: AlphaTest Off： 不测试，全渲染
+	第二种：Alpha 比较符 目标alpha值
+	其中目标alpha值取值范围是 0至1， 也可以用参数 ，如 AlphaTest [varName]。
+
+	比较符:(目标alpha值下面记作x)
+	Always  全渲染（任意x值）
+	Never   全不渲染
+	Greater  点的alpha值大于x时渲染
+	GEuqal   点的alpha值大于等于x时渲染
+	Less       点的alpha值小于x时渲染
+	LEqual    点的alpha值小于等于x时渲染
+	Equal  点的alpha值等于x时渲染
+	NotEqual  点的alpha值不等于x时渲染
+
+	例：
+	AlphaTest never  0      全不渲染（这个0可以是任意值，但必须填）
+	AlphaTest always 0      全渲染（这个0可以是任意值，但必须填）
+	AlphaTest off               全渲染
+	AlphaTest Greater 0.4  当alpha大于0.4渲染，   缺点是边缘过于锋利并且显示不完整，alpha小于0.4的部分被忽略掉了
+	Alpha Blend                 边缘柔和，但是中心也太柔和，没有实体的感觉
+	AlphaTest Greater 0.4 / AlphaTest LEqual 0.4 两个部分，大于0.4不混合，小于0.4混合。效果是既有实体感觉，边缘也柔和。
+	【风宇冲】Unity3D教程宝典之Shader篇：第十二讲 <wbr>Alpha测试
+
+
+	*************************alpha测试*********************************************************************************/
+	this.alphaTest = 0;	//alpha测试,取值范围0.0-1.0
 
 	this.overdraw = 0; // Overdrawn pixels (typically between 0 and 1) for fixing antialiasing gaps in CanvasRenderer
+						// 当三角面之间产生间距,发生图形走样时,填充像素,确保图形保真,消除走样.通常取值范围在0.0=1.0之间.
 
-	this.visible = true;
+	this.visible = true;	//可见性,默认为true
 
-	this.needsUpdate = true;
+	this.needsUpdate = true;	//当设置为true时,标记材质已经更新.
 
 };
 
+/****************************************
+****下面是Fog对象提供的功能函数.
+****************************************/
+
 THREE.Material.prototype = {
 
-	constructor: THREE.Material,
+	constructor: THREE.Material,		//构造器,返回对创建此对象的Material函数的引用
 
+	/*
+	///setValues方法用来通过参数values设置材质对象的属性.values参数的格式为
+	 values = {
+	 *  color: <hex>,
+	 *  opacity: <float>,
+	 *  map: new THREE.Texture( <Image> ),
+	 *
+	 *  lightMap: new THREE.Texture( <Image> ),
+	 *
+	 *  specularMap: new THREE.Texture( <Image> ),
+	 *
+	 *  alphaMap: new THREE.Texture( <Image> ),
+	 *
+	 *  envMap: new THREE.TextureCube( [posx, negx, posy, negy, posz, negz] ),
+	 *  combine: THREE.Multiply,
+	 *  reflectivity: <float>,
+	 *  refractionRatio: <float>,
+	 *
+	 *  shading: THREE.SmoothShading,
+	 *  blending: THREE.NormalBlending,
+	 *  depthTest: <bool>,
+	 *  depthWrite: <bool>,
+	 *
+	 *  wireframe: <boolean>,
+	 *  wireframeLinewidth: <float>,
+	 *
+	 *  vertexColors: THREE.NoColors / THREE.VertexColors / THREE.FaceColors,
+	 *
+	 *  skinning: <bool>,
+	 *  morphTargets: <bool>,
+	 *
+	 *  fog: <bool>
+	 * }
+	*/
+	///<summary>setValues</summary>
+	///<param name ="values" type="Object">材质属性值</param>
+	///<returns type="Material">返回新的材质对象</returns>
 	setValues: function ( values ) {
 
 		if ( values === undefined ) return;
 
-		for ( var key in values ) {
+		for ( var key in values ) {	//遍历values中的键值,并一一赋值给当前材质对象.
 
 			var newValue = values[ key ];
 
@@ -313,8 +437,14 @@ THREE.Material.prototype = {
 
 	},
 
+	/*clone方法
+	///clone方法克隆一个材质对象.
+	*/
+	///<summary>clone</summary>
+	///<param name ="material" type="Material">接收结果的材质对象</param>
+	///<returns type="Texture">返回克隆的材质对象</returns>	
 	clone: function ( material ) {
-
+		//一下将材质属性一一复制.
 		if ( material === undefined ) material = new THREE.Material();
 
 		material.name = this.name;
@@ -343,10 +473,14 @@ THREE.Material.prototype = {
 
 		material.visible = this.visible;
 
-		return material;
+		return material;	//返回克隆的材质对象
 
 	},
-
+	/*dispose方法
+	///dispose方法从内存中删除对象,释放资源.
+	///NOTE: 当删除材质对象,不要忘记调用这个方法,否则会导致内存泄露.
+	*/
+	///<summary>dispose</summary>
 	dispose: function () {
 
 		this.dispatchEvent( { type: 'dispose' } );
@@ -354,7 +488,7 @@ THREE.Material.prototype = {
 	}
 
 };
-
+///EventDispatcher方法应用到当前Material对象.
 THREE.EventDispatcher.prototype.apply( THREE.Material.prototype );
-
+///设置全局的Material对象计数器.
 THREE.MaterialIdCount = 0;
