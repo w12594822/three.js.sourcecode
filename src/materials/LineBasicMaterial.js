@@ -67,7 +67,7 @@ THREE.LineBasicMaterial = function ( parameters ) {
 THREE.LineBasicMaterial.prototype = Object.create( THREE.Material.prototype );
 
 /*clone方法
-///clone方法克隆LineDashedMaterial对象,
+///clone方法克隆LineBasicMaterial对象,
 */
 ///<summary>clone</summary>
 ///<param name ="material" type="LineBasicMaterial">LineBasicMaterial对象,可有可无.</param>
