@@ -122,8 +122,7 @@ THREE.PerspectiveCamera.prototype.setViewOffset = function ( fullWidth, fullHeig
 /*
 ///updateProjectionMatrix方法返回透视投影相机的可视边界的矩阵.当相机的参数被更改后,必须调用此参数.
 */
-///<summary>updateProjectionMatrix</summary>
-///<returns type="OrthographicCamera">返回新的OrthographicCamera对象</returns>
+///<summary>updateProjectionMatrix</summary> 
 THREE.PerspectiveCamera.prototype.updateProjectionMatrix = function () {
 
 	if ( this.fullWidth ) {
