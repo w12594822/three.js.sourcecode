@@ -41,7 +41,7 @@
 */
 ///<summary>MeshBasicMaterial</summary>
 ///<param name ="parameters" type="String">string类型的JSON格式材质属性参数</param>
-///<returns type="MeshBasicMaterial">返回MeshBasicMaterial,线段材质.</returns>
+///<returns type="MeshBasicMaterial">返回MeshBasicMaterial,网格材质.</returns>
 THREE.MeshBasicMaterial = function ( parameters ) {
 
 	THREE.Material.call( this );	//调用Material对象的call方法,将原本属于Material的方法交给当前对象MeshBasicMaterial来使用.
