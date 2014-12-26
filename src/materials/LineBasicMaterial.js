@@ -21,7 +21,7 @@
  */
 
 /*
-///LineBasicMaterial方法根据参数parameters创建线段的线型材质,parameters参数的格式看上面.LineBasicMaterial对象的功能函数采用
+///LineBasicMaterial方法根据参数parameters创建线段的基本材质,parameters参数的格式看上面.LineBasicMaterial对象的功能函数采用
 /// 定义构造的函数原型对象来实现.大部分属性方法继承自材质的基类Material.用材质来定义线性,第一次见,真的很有想象力.简直就是对绘图软件的终结.
 */
 ///<summary>LineBasicMaterial</summary>
