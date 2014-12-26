@@ -150,7 +150,7 @@ src
 ¦      MeshDepthMaterial.js - - - - - - - - - - - - - - - - - - - - - - - - - - -  0%
 ¦      MeshFaceMaterial.js - - - - - - - - - - - - - - - - - - - - - - - - -  - -  0%
 ¦      MeshLambertMaterial.js - - - - - - - - - - - - - - - - - - - - - - - - - -  0%
-¦      MeshNormalMaterial.js - - - - - - - - - - - - - - - - - - - - - - - - - --  0%
+¦      MeshNormalMaterial.js - - - - - - - - - - - - - - - - - - - - - - - - - --100%
 ¦      MeshPhongMaterial.js - - - - - - - - - - - - - - - - - - - - - - - - - - -  0%
 ¦      PointCloudMaterial.js - - - - - - - - - - - - - - - - - - - - - - - - - --  0%
 ¦      RawShaderMaterial.js - - - - - - - - - - - - - - - - - - - - - - - - - - -  0%
