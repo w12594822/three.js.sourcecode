@@ -143,10 +143,10 @@ src
 ¦      XHRLoader.js - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  0%
 ¦      
 --materials
-¦      LineBasicMaterial.js - - - - - - - - - - - - - - - - - - - - - - - - - - -  0%
-¦      LineDashedMaterial.js - - - - - - - - - - - - - - - - - - - - - - - - - --  0%
+¦      LineBasicMaterial.js - - - - - - - - - - - - - - - - - - - - - - - - - - -100%
+¦      LineDashedMaterial.js - - - - - - - - - - - - - - - - - - - - - - - - - --100%
 ¦      Material.js - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  - -100%
-¦      MeshBasicMaterial.js - - - - - - - - - - - - - - - - - - - - - - - - - - -  0%
+¦      MeshBasicMaterial.js - - - - - - - - - - - - - - - - - - - - - - - - - - -100%
 ¦      MeshDepthMaterial.js - - - - - - - - - - - - - - - - - - - - - - - - - - -  0%
 ¦      MeshFaceMaterial.js - - - - - - - - - - - - - - - - - - - - - - - - -  - -  0%
 ¦      MeshLambertMaterial.js - - - - - - - - - - - - - - - - - - - - - - - - - -  0%
